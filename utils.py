@@ -15,7 +15,7 @@ def link_to_image(x: tuple) -> None:
 
 
 def download_data():
-    if len(os.listdir('images')):
+    if os.path.exists('images') and len(os.listdir('images')):
         print('images folder is not empty thus images not downloaded')
         return None
     train = pd.read_csv('train.csv')
